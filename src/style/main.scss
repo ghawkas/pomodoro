@@ -1,0 +1,31 @@
+
+@import "_normalize";
+@import "_fonts";
+@import "_variables";
+
+body {
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-ms-overflow-style: scrollbar;
+
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 600px;
+	&-main {
+		margin-top: 60px;
+	}
+}
+
+.timer {
+	text-align: center;
+	font-family: monospace;
+	font-size: 50px;
+}
+
+
