@@ -3,6 +3,9 @@
 @import "_fonts";
 @import "_variables";
 
+
+
+
 body {
 	position: relative;
 	-webkit-font-smoothing: antialiased;
@@ -11,6 +14,16 @@ body {
 
 	font-family: sans-serif;
 	font-size: 16px;
+
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
 }
 
 .container {
@@ -23,9 +36,65 @@ body {
 }
 
 .timer {
-	text-align: center;
-	font-family: monospace;
-	font-size: 50px;
+	&-numbers {
+		text-align: center;
+		font-family: monospace;
+		font-size: 50px;
+	}
+	&-buttons {
+		text-align: center;
+		margin: 30px 0;
+		button {
+			display: block;
+			width: 100px;
+			height: 40px;
+			font-size: 13px;
+			margin: 0 auto 10px;
+			cursor: pointer;
+		}
+
+		#stopTimer {
+			visibility: hidden;
+		}
+		.text-start {
+			display: inline;
+		}
+		.text-pause {
+			display: none;
+		}
+		.text-continue {
+			display: none;
+		}
+	}
+	&.running {
+		.timer-buttons {
+			#stopTimer {
+				visibility: visible;
+			}
+			.text-start {
+				display: none;
+			}
+			.text-pause {
+				display: inline;
+			}
+			.text-continue {
+				display: none;
+			}
+		}
+	}
+	&.paused {
+		.timer-buttons {
+			.text-start {
+				display: none;
+			}
+			.text-pause {
+				display: none;
+			}
+			.text-continue {
+				display: inline;
+			}
+		}
+	}
 }
 
 

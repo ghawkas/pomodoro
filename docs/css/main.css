@@ -186,6 +186,18 @@ body {
 	-ms-overflow-style: scrollbar;
 	font-family: sans-serif;
 	font-size: 16px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+* {
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
+}
+
+*:before, *:after {
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
 }
 
 .container {
@@ -198,8 +210,66 @@ body {
 	margin-top: 60px;
 }
 
-.timer {
+.timer-numbers {
 	text-align: center;
 	font-family: monospace;
 	font-size: 50px;
+}
+
+.timer-buttons {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.timer-buttons button {
+	display: block;
+	width: 100px;
+	height: 40px;
+	font-size: 13px;
+	margin: 0 auto 10px;
+	cursor: pointer;
+}
+
+.timer-buttons #stopTimer {
+	visibility: hidden;
+}
+
+.timer-buttons .text-start {
+	display: inline;
+}
+
+.timer-buttons .text-pause {
+	display: none;
+}
+
+.timer-buttons .text-continue {
+	display: none;
+}
+
+.timer.running .timer-buttons #stopTimer {
+	visibility: visible;
+}
+
+.timer.running .timer-buttons .text-start {
+	display: none;
+}
+
+.timer.running .timer-buttons .text-pause {
+	display: inline;
+}
+
+.timer.running .timer-buttons .text-continue {
+	display: none;
+}
+
+.timer.paused .timer-buttons .text-start {
+	display: none;
+}
+
+.timer.paused .timer-buttons .text-pause {
+	display: none;
+}
+
+.timer.paused .timer-buttons .text-continue {
+	display: inline;
 }
